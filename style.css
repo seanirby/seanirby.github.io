@@ -93,6 +93,14 @@ p {
 
   #main-container{
     width: 100%;
+    background-color: red;
+  }
+
+
+  #project-container{
+    margin: 0;
+    width: auto;
+    height: auto;
   }
 
 }
