@@ -87,3 +87,19 @@ p {
   }
 
 }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+
+  #main-container{
+    width: 100%;
+  }
+
+  .project-container{
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+  }
+
+}
