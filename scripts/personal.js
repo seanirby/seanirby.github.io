@@ -1,6 +1,6 @@
 $(document).ready( function(){
   $(".project-additional-info").hide()
-  $("div.project-container").hover(
+  $("div.project-info").hover(
 
     function(){
       $(this).find(".project-additional-info").slideDown();
