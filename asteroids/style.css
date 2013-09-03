@@ -1,0 +1,8 @@
+body{
+  text-align: center;
+}
+
+#view{
+  border: 2px solid black;
+  margin: 20px auto;
+}
