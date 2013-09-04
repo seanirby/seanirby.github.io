@@ -82,7 +82,7 @@ p {
 }
 
 /* Smartphones (portrait) ----------- */
-@media (max-width: 720px) {
+@media (max-width: 480px) {
 
   #main-container{
     width: 100%;
