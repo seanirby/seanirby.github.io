@@ -12,7 +12,7 @@ TODO
 TODO
 </description>
 <lastBuildDate>
-Wed, 03 Feb 2016 15:28:36 -0800
+Thu, 04 Feb 2016 18:22:05 -0800
 </lastBuildDate>
 <generator>
 clj-rss
@@ -28,7 +28,7 @@ TODO/posts/2016-02-03-third-post-delete-me.html
 Third Post!
 </title>
 <description>
- &lt;p&gt; This is my first post Semper eget duis at tellus at urna condimentum mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl? Penatibus et magnis dis parturient montes, nascetur ridiculus mus mauris Volutpat maecenas volutpat blandit aliquam etiam erat velit, scelerisque in dictum non, consectetur a erat. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar.&lt;/p&gt;&lt;p&gt; Sagittis orci, a scelerisque purus semper. Eget nunc scelerisque viverra mauris, in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed.  &lt;/p&gt;&lt;p&gt; Gravida dictum fusce ut placerat orci. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris, cursus mattis molestie a&lt;/p&gt;
+ &lt;p&gt; This is my first post Semper eget duis at tellus at urna condimentum mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl? Penatibus et magnis dis parturient montes, nascetur ridiculus mus mauris Volutpat maecenas volutpat blandit aliquam etiam erat velit, scelerisque in dictum non, consectetur a erat. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar.&lt;/p&gt;&lt;p&gt; Sagittis orci, a scelerisque purus semper. Eget nunc scelerisque viverra mauris, in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed.  &lt;/p&gt; 
 </description>
 <enclosure>
 
@@ -39,13 +39,13 @@ Wed, 03 Feb 2016 00:00:00 -0800
 </item>
 <item>
 <guid>
-TODO/posts/2016-02-03-second-post-delete-me.html
+TODO/posts/third-post-deleteme.html
 </guid>
 <link>
-TODO/posts/2016-02-03-second-post-delete-me.html
+TODO/posts/third-post-deleteme.html
 </link>
 <title>
-Second Post!
+APples
 </title>
 <description>
  &lt;p&gt; This is my first post Semper eget duis at tellus at urna condimentum mattis pellentesque id nibh tortor, id aliquet lectus proin nibh nisl? Penatibus et magnis dis parturient montes, nascetur ridiculus mus mauris Volutpat maecenas volutpat blandit aliquam etiam erat velit, scelerisque in dictum non, consectetur a erat. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar.&lt;/p&gt;&lt;p&gt; Sagittis orci, a scelerisque purus semper. Eget nunc scelerisque viverra mauris, in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed.  &lt;/p&gt;&lt;p&gt; Gravida dictum fusce ut placerat orci. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris, cursus mattis molestie a&lt;/p&gt;
@@ -54,7 +54,7 @@ Second Post!
 
 </enclosure>
 <pubDate>
-Wed, 03 Feb 2016 00:00:00 -0800
+Tue, 02 Feb 2016 00:00:00 -0800
 </pubDate>
 </item>
 <item>

@@ -13,27 +13,49 @@ h3 {
 
 /* TODO organize this */
 .simple-nav {
-  margin-top: 75px; }
-  .simple-nav .bottom {
-    position: absolute;
-    bottom: 100%; }
-  .simple-nav h1 {
-    font-size: 42px;
-    margin: 0;
-    font-family: "Open Sans", sans-serif; }
+  margin: 20px;
+  text-align: center; }
+  .simple-nav .simple-nav-title {
+    font-size: 21px;
+    text-align: center;
+    margin: 0 0 5px 0;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace; }
+  .simple-nav .center {
+    display: table-cell; }
   .simple-nav a {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     color: #292929; }
-  .simple-nav a:active {
+  .simple-nav a.active {
     color: #ff5ba6; }
+  .simple-nav pre {
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    font-size: 8px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: left; }
+
+.preview-link .post-header {
+  color: #292929; }
+.preview-link .meta {
+  color: rgba(0, 0, 0, 0.4); }
+
+.preview-link:hover {
+  text-decoration: none; }
+  .preview-link:hover .post-header {
+    text-decoration: underline; }
 
 /*  */
 body {
   color: #292929;
   background-color: #Fcfcfc;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Latin Modern Roman", Georgia, "Times New Roman", Times, serif;
   font-size: 16px; }
 
 .container {
+  margin-top: 0;
   max-width: 900px; }
 
 .right {
@@ -79,7 +101,8 @@ body {
 #content {
   background-color: #Fcfcfc;
   border-radius: 3px;
-  box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1); }
+  box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
+  margin-top: 0; }
 
 #content img {
   max-width: 100%;
@@ -139,14 +162,16 @@ pre, code, .hljs {
     padding: 25px 15px; }
 
   #content {
-    margin-top: 30px;
-    padding: 30px 30px; } }
+    padding: 30px; } }
 @media (max-width: 767px) {
   body {
     font-size: 14px; }
 
   .navbar-default .navbar-brand {
     font-size: 30px; }
+
+  .simple-nav > .simple-nav-toggle {
+    display: none; }
 
   #content {
     padding: 15px; }
