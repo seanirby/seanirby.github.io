@@ -7,17 +7,20 @@ $top-offset: 20px;
 /* $sans-serif-ff: 'Helvetica Neue', Helvetica, Arial, sans-serif */;
 
 /* Colors */
-$white:   #Fcfcfc;
 $black:   #292929;
-$gray:    rgba(0, 0, 0, 0.4);
-$red:     #ff5ba6;
 $code-bg: #f7f9fd;
+$gray:    rgba(0, 0, 0, 0.4);
+$green:   #00eb00;
+$red:     #ff5ba6;
+$white:   #Fcfcfc;
+
+$wrapper-width: 20px;
+$wrapper-offset: 50px;
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $serif-ff;
+    font-family: $monospace-ff;
+    text-decoration: underline;
 }
-
-
 
 h3  {
     margin-top: 25px;
@@ -27,27 +30,67 @@ h3  {
 
 /* TODO organize this */
 .simple-nav  {
-    margin: $top-offset;
+    color: $white;
+    margin-top: $top-offset;
     text-align: center;
 
+    > * {
+        margin-bottom: $top-offset;
+    }
+    
     .simple-nav-title {
-        font-size: 21px;
-        text-align: center;
-        margin: 0 0 5px 0;
         font-family: $monospace-ff;
+        text-align: center;
+        text-decoration: none;
     } 
+
+    .simple-nav-title, .simple-nav-link  {
+        font-size: 24px;
+    } 
+
+    .simple-nav-link {
+        font-family: $monospace-ff;
+        color: $white;
+        text-decoration: none;
+    }
+
+    .wrapper-container {
+        visibility: hidden;
+        width: 0px;
+        position: absolute;
+        left: 50%;
+    }
+
+    .wrapper-container::before {
+        position: absolute;
+        width: $wrapper-width;
+        left: -$wrapper-width/2 - $wrapper-offset;
+        content: "[";
+    }
+
+    .wrapper-container::after {
+        position: absolute;
+        width: $wrapper-width;
+        right: -$wrapper-width/2 - $wrapper-offset;
+        content: "]";
+    }
+
+    .simple-nav-link.active {
+        .wrapper-container {
+            visibility: visible;
+            color: $red;
+        }
+    }
+
+    .simple-nav-link:hover {
+        .wrapper-container {
+            visibility: visible;
+            color: $green;
+        }
+    }
 
     .center {
         display: table-cell;
-    }
-
-    a {
-        font-family: $monospace-ff;
-        color: $black;
-    }
-
-    a.active {
-        color: $red;
     }
 
     pre {
@@ -56,12 +99,17 @@ h3  {
         display: inline-block;
         font-size: 8px;
         font-weight: bold;
-        margin: 0;
         padding: 0;
         text-align: left;
+        color: $white;
     }
 
 } 
+
+#embedded {
+    width:100%;
+    height:500px;
+}
 
 .preview-link {
     
@@ -84,9 +132,8 @@ h3  {
 /*  */
 
 body  {
-    color: $black;
-    background-color: $white;
-    font-family: $serif-ff;
+    background-color: $black;
+    font-family: $monospace-ff;
     font-size: 16px;
 }
 
@@ -100,54 +147,9 @@ body  {
     text-align: right;
 }
 
-.navbar  {
-    border-radius: 0;
-    box-shadow: 0 0 0 0,0 6px 12px rgba(34,34,34,0.3);
-}
-
-.navbar-default  {
-    background-color: #428bca;
-    border: none;
-}
-
-.navbar-default .navbar-brand  {
-    color: $white;
-    font-family: $serif-ff;
-}
-
-.navbar-default .navbar-brand:hover  {
-    color: $white;
-}
-
-.navbar-default .navbar-nav li a  {
-    color: $white;
-}
-
-.navbar-default .navbar-nav li a:hover  {
-    color: $white;
-    background-color: #3d80ba;
-}
-
-.navbar-default .navbar-nav .active a  {
-    color: $white;
-    background-color: #3d80ba;
-}
-
-.navbar-default .navbar-toggle:hover {
-    background-color: #3d80ba;
-}
-
-.navbar-default .navbar-toggle .icon-bar  {
-    background-color: $white;
-}
-
-#sidebar  {
-    margin-left: 15px;
-    margin-top: 50px;
-}
-
 #content  {
     background-color: $white;
+    color: $black;
     border-radius: 3px;
     box-shadow: 0 0 0 0,0 6px 12px rgba(34,34,34,0.1);
     margin-top: 0;
@@ -163,6 +165,7 @@ footer  {
     text-align: center;
     padding-top: 75px;
     padding-bottom: 30px;
+    color: $white;
 }
 
 #post-tags  {
@@ -231,18 +234,22 @@ pre, code, .hljs  {
         font-size: 14px;
     }
 
-    .navbar-default .navbar-brand  {
-        font-size: 30px;
-    }
-
     .simple-nav{
+        padding: 0 20px;
+        
+        .simple-nav-title {
+            margin-bottom: $top-offset;
+        }
+        
         > .simple-nav-toggle {
             display: none;
         }
     }
+
     #content {
         padding: 15px;
     }
+    
     #post-meta .right  {
         float:left;
         text-align: left;

@@ -4,7 +4,8 @@
 /* $sans-serif-ff: 'Helvetica Neue', Helvetica, Arial, sans-serif */
 /* Colors */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Latin Modern Roman", Georgia, "Times New Roman", Times, serif; }
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  text-decoration: underline; }
 
 h3 {
   margin-top: 25px;
@@ -13,29 +14,57 @@ h3 {
 
 /* TODO organize this */
 .simple-nav {
-  margin: 20px;
+  color: #Fcfcfc;
+  margin-top: 20px;
   text-align: center; }
+  .simple-nav > * {
+    margin-bottom: 20px; }
   .simple-nav .simple-nav-title {
-    font-size: 21px;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     text-align: center;
-    margin: 0 0 5px 0;
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace; }
+    text-decoration: none; }
+  .simple-nav .simple-nav-title, .simple-nav .simple-nav-link {
+    font-size: 24px; }
+  .simple-nav .simple-nav-link {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    color: #Fcfcfc;
+    text-decoration: none; }
+  .simple-nav .wrapper-container {
+    visibility: hidden;
+    width: 0px;
+    position: absolute;
+    left: 50%; }
+  .simple-nav .wrapper-container::before {
+    position: absolute;
+    width: 20px;
+    left: -60px;
+    content: "["; }
+  .simple-nav .wrapper-container::after {
+    position: absolute;
+    width: 20px;
+    right: -60px;
+    content: "]"; }
+  .simple-nav .simple-nav-link.active .wrapper-container {
+    visibility: visible;
+    color: #ff5ba6; }
+  .simple-nav .simple-nav-link:hover .wrapper-container {
+    visibility: visible;
+    color: #00eb00; }
   .simple-nav .center {
     display: table-cell; }
-  .simple-nav a {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-    color: #292929; }
-  .simple-nav a.active {
-    color: #ff5ba6; }
   .simple-nav pre {
     border: none;
     background-color: transparent;
     display: inline-block;
     font-size: 8px;
     font-weight: bold;
-    margin: 0;
     padding: 0;
-    text-align: left; }
+    text-align: left;
+    color: #Fcfcfc; }
+
+#embedded {
+  width: 100%;
+  height: 500px; }
 
 .preview-link .post-header {
   color: #292929; }
@@ -49,9 +78,8 @@ h3 {
 
 /*  */
 body {
-  color: #292929;
-  background-color: #Fcfcfc;
-  font-family: "Latin Modern Roman", Georgia, "Times New Roman", Times, serif;
+  background-color: #292929;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 16px; }
 
 .container {
@@ -62,44 +90,9 @@ body {
   float: right;
   text-align: right; }
 
-.navbar {
-  border-radius: 0;
-  box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.3); }
-
-.navbar-default {
-  background-color: #428bca;
-  border: none; }
-
-.navbar-default .navbar-brand {
-  color: #Fcfcfc;
-  font-family: "Latin Modern Roman", Georgia, "Times New Roman", Times, serif; }
-
-.navbar-default .navbar-brand:hover {
-  color: #Fcfcfc; }
-
-.navbar-default .navbar-nav li a {
-  color: #Fcfcfc; }
-
-.navbar-default .navbar-nav li a:hover {
-  color: #Fcfcfc;
-  background-color: #3d80ba; }
-
-.navbar-default .navbar-nav .active a {
-  color: #Fcfcfc;
-  background-color: #3d80ba; }
-
-.navbar-default .navbar-toggle:hover {
-  background-color: #3d80ba; }
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #Fcfcfc; }
-
-#sidebar {
-  margin-left: 15px;
-  margin-top: 50px; }
-
 #content {
   background-color: #Fcfcfc;
+  color: #292929;
   border-radius: 3px;
   box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
   margin-top: 0; }
@@ -112,7 +105,8 @@ footer {
   font-size: 14px;
   text-align: center;
   padding-top: 75px;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  color: #Fcfcfc; }
 
 #post-tags {
   margin-top: 30px; }
@@ -167,11 +161,12 @@ pre, code, .hljs {
   body {
     font-size: 14px; }
 
-  .navbar-default .navbar-brand {
-    font-size: 30px; }
-
-  .simple-nav > .simple-nav-toggle {
-    display: none; }
+  .simple-nav {
+    padding: 0 20px; }
+    .simple-nav .simple-nav-title {
+      margin-bottom: 20px; }
+    .simple-nav > .simple-nav-toggle {
+      display: none; }
 
   #content {
     padding: 15px; }
