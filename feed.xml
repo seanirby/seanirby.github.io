@@ -12,7 +12,7 @@ TODO
 TODO
 </description>
 <lastBuildDate>
-Fri, 19 Feb 2016 15:11:28 -0800
+Fri, 19 Feb 2016 15:23:11 -0800
 </lastBuildDate>
 <generator>
 clj-rss
@@ -37,7 +37,7 @@ Why I Use Helm and Why You Should Too
                     &amp;#40;rhythmbox-load-library&amp;#41;&amp;#41;&amp;#41;&amp;#41;&amp;#41;&amp;#41;
 ;;;###autoload
 &amp;#40;defun helm-rhythmbox &amp;#40;&amp;#41;
-&amp;quot;Choose a song from the Rhythmbox library to play or enqueue.&amp;quot;
+    &amp;quot;Choose a song from the Rhythmbox library to play or enqueue.&amp;quot;
     &amp;#40;interactive&amp;#41;
     &amp;#40;helm :sources '&amp;#40;helm-source-rhythmbox-track-search&amp;#41;
             :buffer &amp;quot;&amp;#42;helm-rhythmbox&amp;#42;&amp;quot;&amp;#41;&amp;#41;&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;after:&quot;&gt;&lt;/a&gt;After:&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;;;;###autoload
