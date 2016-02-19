@@ -155,10 +155,34 @@ body  {
     margin-top: 0;
 }
 
-#content img  {
+#content img {
     max-width: 100%;
     height: auto;
+    padding: 30px;
 }
+
+#content figure{
+    padding: 30px;
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    figcaption {
+        font-weight: bold;
+        text-align: center;
+
+        figcaption {
+            font-weight: normal;
+            font-size: 14px;
+            padding: 0 10px;
+        }
+    }
+}
+
+
 
 footer  {
     font-size: 14px;
@@ -226,6 +250,7 @@ pre, code, .hljs  {
     #content {
         padding: 30px;
     }
+
 }
 
 
@@ -253,6 +278,17 @@ pre, code, .hljs  {
     #post-meta .right  {
         float:left;
         text-align: left;
+    }
+
+    #content img {
+        max-width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    #content figure {
+        padding: 15px;
+
     }
 }
 
