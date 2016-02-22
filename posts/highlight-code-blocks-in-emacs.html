@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>the scratch castle: Posts Tagged &quot;emacs&quot;</title>
+    <title>the scratch castle: Alternative Lisp Formatting Part 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -66,29 +66,37 @@
         <div class="col-10 col-offset-1">
           <div id="content">
             
-<div id="posts-by-tag">
-    <div id="page-header">
-        <h2>Posts Tagged &quot;emacs&quot;</h2>
+<div id="post">
+    <div class="post-header">
+    <h2>Alternative Lisp Formatting Part 1</h2>
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">February 20, 2016</div>
+        
     </div>
-    <ul>
+</div>
+<div>
     
-        <li>
-            <a href="/posts/highlight-code-blocks-in-emacs.html">Alternative Lisp Formatting Part 1</a>
-        </li>
+    <p>Lately I've been thinking about how Lisp code could be displayed differently.  Do we really need all the parenthesis?</p><p>Now don't get me wrong, I don't hate the parens.  They are necessary for making Lisp homoiconic, which is arguably one of its best features. The parens also allow editing tools like <a href='https://github.com/abo-abo/lispy'>lispy</a> and <a href='https://www.emacswiki.org/emacs-test/ParEdit'>paredit</a> to leverage the structure of Lisp to make powerful text manipulation commands.</p><p>However, I do think the parens add a significant amount of visual clutter so I'm interested in different strategies that could  remedy this.  Since Lisp code has such a rigid structure, it should be easy to translate to other formats right?</p><p>Many people on the net have tried using indentation as a way to delimit the expressions.  I don't even have to look at that code to know I hate it.  So what other options are there?</p><p>One idea is to highlight the background of S-expressions according to their depth and do something with the surrounding parens.  I'm not all the way there yet, but I did start work on a prototype for Emacs.  I found this one package, <a href='http://github.com/istib/rainbow-blocks'>rainbow-blocks.el</a>, that almost does what I want.  I added some small modifications such that the background is highlighted rather than the foreground.  The result is this:</p><p><img src="/img/light.png" alt="rainbow-block-bg enabled with a light theme" /></p><p><a href='https://github.com/seanirby/rainbow-blocks-bg'>rainbow-blocks-bg on github</a></p><p>I also tried hiding the parens by setting them to the same color as the background, but you can quickly see why that wouldn't work.</p><p><img src="/img/no-parens.png" alt="rainbow-block-bg enabled with a light theme" /></p><p>I'm not sure what I want to do next, but I think I will try swapping the paren characters for an svg image of a filled half circle.  This could have the same effect as the above picture but the left and right edges of an expression will be rounded.  We shall see.</p><p> — sean</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
     
-        <li>
-            <a href="/posts/emacs-and-helm.html">Why I Use Helm and Why You Should Too</a>
-        </li>
+    <a href="/tags-output/emacs.html">emacs</a>
     
-        <li>
-            <a href="/posts/a-simple-keyboard-macro-demo.html">A Simple Keyboard Macro Demo</a>
-        </li>
+</div>
+
+
+    <div id="prev-next">
+        
+        
+        <a class="right" href="/posts/emacs-and-helm.html">Why I Use Helm and Why You Should Too &raquo;</a>
+        
+    </div>
+
     
-        <li>
-            <a href="/posts/parsing-an-elisp-file-with-evalator.html">Parsing an Elisp File with Evalator</a>
-        </li>
-    
-    </ul>
+
+
 </div>
 
           </div>
