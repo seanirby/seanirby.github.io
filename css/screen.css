@@ -154,17 +154,12 @@ footer {
   font-size: 32px; }
 
 pre {
+  background-color: #292929;
   overflow-x: auto; }
 
 pre code {
   overflow-wrap: normal;
   white-space: pre; }
-
-code {
-  color: #428bca; }
-
-pre, code, .hljs {
-  background-color: #f7f9fd; }
 
 @media (min-width: 768px) {
   .navbar {

@@ -231,19 +231,13 @@ footer  {
 }
 
 pre  {
+    background-color: $black;
     overflow-x: auto;
 }
+
 pre code  {
     overflow-wrap: normal;
     white-space: pre;
-}
-
-code  {
-    color: #428bca;
-}
-
-pre, code, .hljs  {
-    background-color: $code-bg;
 }
 
 @media (min-width: 768px)  {
