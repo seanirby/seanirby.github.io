@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>the scratch castle: Shorty: An Interactive Tool for Learning Keyboard Shortcuts in Emacs (WIP)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+    <script src="//localhost:35729/livereload.js"></script>
+  </head>
+  <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-74092852-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <div class="container">
+      <div class="simple-nav">
+        <h3 class="simple-nav-title">the scratch castle</h3>
+        <pre class="simple-nav-toggle"> _   _   _             _   _   _
+| |_| |_| |           | |_| |_| |
+ \ _____ /      o_     \ _____ /
+  |     |       |_|     |     |
+  |  |  |       |       |  |  |
+  |   _ | _   _ | _   _ | _   |
+  |  | |_| |_| ||| |_| |_| |  |
+  |  |                     |  |
+  || |                     | ||
+  |  |        _____        |  |
+  |  |       /_|_|_\       |  |
+  |  |      /|_|_|_|\      |  |
+  |  |      ||_|_|_||      |  |
+  |  |      ||_|_|_||      |  |
+  |__|      ||_|_|_||      |__|
+ /   |      ||_|_|_||      |   \
+=================================
+</pre>
+        <div class="row">
+          <div class="col-8 col-offset-2">
+            <div class="row link-container">
+              <a class="col-xs-4 simple-nav-link " href="/index.html">
+                <div class="wrapper-container"></div>
+                home
+              </a>
+              <a class="col-xs-4 simple-nav-link " href="/pages/about.html">
+                <div class="wrapper-container"></div>
+                about
+              </a>
+              <a class="col-xs-4 simple-nav-link" href="/feed.xml">
+                <div class="wrapper-container"></div>
+                rss
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 col-offset-1">
+          <div id="content">
+            
+<div id="post">
+    <div class="post-header">
+    <h2>Shorty: An Interactive Tool for Learning Keyboard Shortcuts in Emacs (WIP)</h2>
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">February 26, 2016</div>
+        
+    </div>
+</div>
+<div>
+    
+    <h2><a name="preface"></a>Preface</h2><p>(If you're in a hurry, click <a href='#good-news'>here</a> to skip to the goods)</p><p>I started Emacs because I wanted an editor that would let me do things efficiently.  A huge part of being efficient in Emacs is learning keyboard shortcuts.  This is unfortunate because my leaky brain isn't very good at remembering a bunch of little details and there are a lot of default Emacs bindings you must internalize.  There's a tutorial that can be accessed with <code>C-h t</code> and it's OK.  I do like that it's just a simple text file, but this comes with downsides.  The default tutorial is kludgy to navigate for a newbie and it offers no feedback on what you're doing.  Another issue is that the tutorial only covers Emacs core shortcuts, but we all know that third party packages make Emacs so much more than it's core.</p><p>I think we could bring more people to the editor if there was a tool that let users interactively learn ALL the shortcuts available in Emacs from within Emacs.  I decided this tool should have the following features:</p><h4><a name="each&#95;shortcut&#95;should&#95;have&#95;a&#95;demonstration,&#95;or&#95;a&#95;"demo""></a>Each shortcut should have a demonstration, or a "demo"</h4><p>A demo is a live, automated demonstration of a shortcut in a buffer.  A live demo shows users what should happen when that shortcut is pressed.  This is much better than telling them.</p><h4><a name="demos&#95;can&#95;be&#95;played&#95;and&#95;replayed"></a>Demos can be played and replayed</h4><p>Once a demo is done playing, a replay option should be presented to the user.</p><h4><a name="a&#95;log&#95;buffer&#95;should&#95;be&#95;displayed&#95;along&#95;with&#95;the&#95;demo&#95;buffer"></a>A log buffer should be displayed along with the demo buffer</h4><p>This buffer would show the keys being pressed and their associated command.  This gives users a script for replicating the demonstration later.</p><h4><a name="demos&#95;should&#95;execute&#95;in&#95;a&#95;controlled&#95;environment"></a>Demos should execute in a controlled environment</h4><p>The author of the demo should be able to specify what major and minor modes are on while the demo is executing.</p><h4><a name="users&#95;should&#95;be&#95;able&#95;to&#95;practice&#95;the&#95;shortcut&#95;from&#95;within&#95;the&#95;tool"></a>Users should be able to practice the shortcut from within the tool</h4><p>Learning follows doing so once a demo is done playing, users should have the option to jump into the demo buffer and try it out.</p><h4><a name="similar&#95;demos&#95;should&#95;be&#95;organized&#95;into&#95;"playlists""></a>Similar demos should be organized into "playlists"</h4><p>For example, <code>C-n</code>, <code>C-p</code>, <code>C-f</code>, and <code>C-b</code> would be in the "Basic Emacs Navigation" playlist.</p><h4><a name="a&#95;user&#95;should&#95;be&#95;able&#95;to&#95;pick&#95;a&#95;playlist&#95;and&#95;play&#95;through&#95;all&#95;the&#95;demos&#95;contained&#95;within"></a>A user should be able to pick a playlist and play through all the demos contained within</h4><p>Once a demo is over the user should have the option to move forward or backward through the playlist.</p><h4><a name="playlists&#95;should&#95;be&#95;organized&#95;into&#95;albums"></a>Playlists should be organized into albums</h4><p>An album represents all the shortcuts for a particular thing.  I would assume an emacs package would define a single album with one or more playlists.</p><h4><a name="an&#95;album&#95;must&#95;be&#95;an&#95;elisp&#95;data&#95;structure&#95;and&#95;contain&#95;all&#95;the&#95;information&#95;necessary&#95;for&#95;playing&#95;the&#95;demos/playlists&#95;within"></a>An album must be an elisp data structure and contain all the information necessary for playing the demos/playlists within</h4><p>This is an obvious format to work with because Emacs understands it and package authors understand it.</p><h4><a name="it&#95;must&#95;be&#95;easy&#95;to&#95;use"></a>It must be easy to use</h4><p>To be better than a text file tutorial, the proposed tool must be just as easy to use.</p><h4><a name="it&#95;must&#95;be&#95;extendable"></a>It must be extendable</h4><p>Emacs is so much more than Emacs core so third party packages the user has installed should be able to hook into the tool and add their tutorials too.</p><h4><a name="albums&#95;should&#95;be&#95;easy&#95;to&#95;build"></a>Albums should be easy to build</h4><p>Package authors won't use the tool if making albums isn't easy.</p><p><a name="good-news"></a><h2><a name="good&#95;news"></a>Good News</h2></p><p>If all that sounds nice to you well I have some good news, I've almost finished building it.</p><p>At the moment I'm calling it <a href='http://github.com/seanirby/shorty'>shorty</a>.  Here's it is in action:</p><p><img src="/img/shorty-demo.gif" alt="" /></p><p>Here's what happened:</p><ol><li>I told shorty to open up my albums buffer.  This is an outline of all the albums, demos, and playlists that shorty knows about.  This is the main UI for interacting with shorty.</li><li>I put my cursor on Playlist 1 > Demo 1 and tell shorty to play that demo.</li><li>Shorty opens up a demo buffer and a log buffer then starts the demo while logging the keys being "pressed" by the program.</li><li>Once the demo is over, I press "n" to move to the next demo.</li><li>Once this demo is done playing I press "q" to quit.</li></ol><p>Shorty currently satisfies most of the features I outlined above but it's still not 100%.  Let's take a deeper look.</p><h2><a name="overview"></a>Overview</h2><p>As mentioned before, demos are organized into playlists, and playlists are organized into albums.  Let's start at the top level and see what an album looks like:</p><pre><code>&#40;list
+    ;; The name of the album
+    :name          &quot;Example Album&quot;
+    ;; A list of the default minor modes descendant demos will use &#40;Optional&#41;
+    :minor-modes   '&#40;paredit-mode&#41;
+    ;; References are relative filepaths to a a textfile.
+    ;; These refs may be used as values for the :text property in descendant demos
+    :text-refs     &#40;list :emacs-program  &quot;sample-text/emacs-program&quot;
+                         :hello-world    &quot;sample-text/hello-world&quot;
+                         :lorem-ipsum    &quot;sample-text/lorem-ipsum&quot;&#41;
+    :playlists     ...&#41;</code></pre><p>Pretty straightforward.</p><p>Here's a playlist.</p><pre><code>&#40;list
+    :name   &quot;Playlist 1&quot;
+    :demos  ...&#41;</code></pre><p>Playlists aren't very interesting :).</p><p>And finally, here's a demo:</p><pre><code>&#40;list
+    :name   &quot;Demo 1&quot;
+    ;; The text to be used in the demo buffer
+    :text :lorem-ipsum
+    ;; The key presses that are executed in the demo.
+    :macro  &quot;M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k&quot;&#41;</code></pre><p>The entire album looks like this:</p><pre><code>&#40;list :name          &quot;Example Album&quot;
+      :minor-modes   '&#40;paredit-mode&#41;
+      :text-refs     &#40;list :emacs-program  &quot;sample-text/emacs-program&quot;
+                           :hello-world    &quot;sample-text/hello-world&quot;
+                           :lorem-ipsum    &quot;sample-text/lorem-ipsum&quot;&#41;
+      :playlists     &#40;list &#40;list :name   &quot;Playlist 1&quot;
+                                 :demos  &#40;list &#40;list :name   &quot;Demo 1&quot;
+                                                     :macro  &quot;M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k C-n M-f C-k&quot;
+                                                     :text   :lorem-ipsum&#41;
+                                               &#40;list :name   &quot;Demo 2&quot;
+                                                     :macro  &quot;2&#42;M-f M-b 5&#42;C-d g o o d b y e SPC c r u e l&quot;
+                                                     :text   &quot;&#40;message \&quot;hello world\&quot;&#41;&quot;&#41;&#41;&#41;
+                           &#40;list :name   &quot;Playlist 2&quot;
+                                 :demos  &#40;list &#40;list :name    &quot;Demo 1&quot;
+                                                     :macro  &quot;a b c d e f g&quot;
+                                                     :text   :hello-world&#41;&#41;&#41;&#41;&#41;</code></pre><p>The idea is that packages would define an album like <code>foo-shorty-album</code> in their library and then users could add this album to the global <code>shorty-album-list</code>.  When the user calls <code>shorty-album-buffer-open</code>, shorty takes the list of albums and creates a read-only org buffer.  This buffer is the main UI and is basically just an outline of all the available albums.  Users can then navigate this file as they wish and play an album, playlist, or demo by calling <code>shorty-album-play</code>.</p><h2><a name="issues"></a>Issues</h2><p>There's currently a blocking issue regarding modes.  Package authors need to specify exactly what minor modes and what major mode should be on for a particular demo.  Shorty must respect this when it creates a new demo buffer. My current strategy is first turn off all the minor modes for a particular buffer then set the ones the author has specified.  I'm currently using a package called <a href='https://github.com/ShingoFukuyama/manage-minor-mode'>manage-minor-modes</a> to handle this.  Unfortunately when you turn off all the minor modes for a buffer, it often causes side effects in other buffers too.  It's possible that an error during demo execution could wipe out all the minor modes in all the users buffers.  The author of manage-minor-modes is aware of this so he include a functoin <code>manage-minor-mode-restore-from-bals</code> that restores all the current buffers to their original state.</p><p>Unfortunately, I've found that calling <code>manage-minor-mode-restore-from-bals</code> sometimes will have no effect and the user will either have to turn all minor modes back on manually or restart Emacs.  This isn't so much an issue as when I first started developing shorty, but it's still possible.  This is obviously an unacceptable error so I need to figure out how to minimize this problem as much as possible before releasing.</p><h2><a name="todo"></a>TODO</h2><p>There's still some work left to do before I can release this into the wild.</p><ol><li>Need to add support for controlling the major mode of a demo.  This is kind of tricky.</li><li>Eliminate or minimize the minor mode problem described above.</li><li>Provide an easy way for package authors to write albums.  I don't know what this looks like yet.</li><li>Need to iron out the format of an album.  I don't know if keeping the full macro string in the demo is the right idea.</li><li>Allow the starting point of the cursor to be specified for a demo.</li><li>???</li></ol><p>I posted this with the tag WIP which means "work in progress".  I plan to do more of these types of posts since I usually want to show off the stuff I'm working on so I can get ideas from the community before finishing it.  With that being said,  I'm interested to hear if anyone has any ideas or constructive-criticism regarding shorty.  Click <a href='http://github.com/seanirby/shorty'>here</a> for the github link and you can reach on Twitter by the handle <a href='http://twitter.com/sean_irbyy'>@sean_irbyy</a>.</p><p>Thanks for reading.</p><p>— sean</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags-output/emacs.html">emacs</a>
+    
+    <a href="/tags-output/programming.html">programming</a>
+    
+    <a href="/tags-output/WIP.html">WIP</a>
+    
+    <a href="/tags-output/shorty.html">shorty</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        
+        <a class="right" href="/posts/highlight-code-blocks-in-emacs.html">Alternative Lisp Formatting Part 1 &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+          </div>
+        </div>
+      </div>
+
+      <footer>Copyright &copy;  Sean Irby
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+      </footer>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

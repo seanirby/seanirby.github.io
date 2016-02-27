@@ -1,0 +1,28 @@
+{:title "Alternative Lisp Formatting Part 1"
+:layout :post
+:date   "2016-02-20"
+:tags   ["emacs"]}
+
+
+Lately I've been thinking about how Lisp code could be displayed differently.  Do we really need all the parenthesis?
+
+Now don't get me wrong, I don't hate the parens.  They are necessary for making Lisp homoiconic, which is arguably one of its best features. The parens also allow editing tools like [lispy](https://github.com/abo-abo/lispy) and [paredit](https://www.emacswiki.org/emacs-test/ParEdit) to leverage the structure of Lisp to make powerful text manipulation commands.
+
+However, I do think the parens add a significant amount of visual clutter so I'm interested in different strategies that could  remedy this.  Since Lisp code has such a rigid structure, it should be easy to translate to other formats right?
+
+Many people on the net have tried using indentation as a way to delimit the expressions.  I don't even have to look at that code to know I hate it.  So what other options are there?
+
+One idea is to highlight the background of S-expressions according to their depth and do something with the surrounding parens.  I'm not all the way there yet, but I did start work on a prototype for Emacs.  I found this one package, [rainbow-blocks.el](http://github.com/istib/rainbow-blocks), that almost does what I want.  I added some small modifications such that the background is highlighted rather than the foreground.  The result is this:
+
+![rainbow-block-bg enabled with a light theme](/img/light.png)
+
+[rainbow-blocks-bg on github](https://github.com/seanirby/rainbow-blocks-bg)
+
+I also tried hiding the parens by setting them to the same color as the background, but you can quickly see why that wouldn't work.
+
+![rainbow-block-bg enabled with a light theme](/img/no-parens.png)
+
+I'm not sure what I want to do next, but I think I will try swapping the paren characters for an svg image of a filled half circle.  This could have the same effect as the above picture but the left and right edges of an expression will be rounded.  We shall see.
+
+ — sean
+

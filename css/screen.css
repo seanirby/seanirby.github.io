@@ -96,6 +96,10 @@ body {
   border-radius: 3px;
   box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
   margin-top: 0; }
+  #content h1, #content h2, #content h3, #content h4, #content h5 {
+    margin-top: 40px;
+    font-weight: bold;
+    text-decoration: none !important; }
 
 #content blockquote {
   padding: 30px; }
